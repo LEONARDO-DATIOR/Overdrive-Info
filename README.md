@@ -38,3 +38,4 @@ Essa separacao facilita adaptar o projeto futuramente para outras interfaces, co
 - py-cpuinfo
 - psutil
 - wmi
+- winreg

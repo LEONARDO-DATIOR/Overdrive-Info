@@ -10,14 +10,14 @@ class DiskCollector:
         for disco in psutil.disk_partitions(): 
             uso = psutil.disk_usage(disco.mountpoint)
 
-            disco = DiskInfo(
+            disco_info = DiskInfo(
                 unidade=disco.device,
                 total_bytes=uso.total,
                 usados_bytes=uso.used,
                 livre_bytes=uso.free,
             );
 
-            discos.append(disco)
+            discos.append(disco_info)
         
         return discos
 

@@ -1,12 +1,18 @@
 from collections.abc import Callable
 
+# COLLECTORS
 from machine_monitor.collectors.DiskCollector import DiskCollector
 from machine_monitor.collectors.MemoryCollector import MemoryCollector
 from machine_monitor.collectors.ProcessorCollector import ProcessorCollector
-from machine_monitor.view.Memory_view import MemoryView
-from machine_monitor.view.SystemView import SystemView
-from machine_monitor.view.disk_view import DiskView
+from machine_monitor.collectors.SystemCollectors import SystemCollectors
+from machine_monitor.collectors.SoftwaresCollectors import SoftwaresCollectors
+
+# VIEWS
 from machine_monitor.view.Processor_view import ProcessorView
+from machine_monitor.view.Memory_view import MemoryView
+from machine_monitor.view.disk_view import DiskView
+from machine_monitor.view.SystemView import SystemView
+from machine_monitor.view.Softwares_view import SoftwaresView 
 
 
 class InteractiveMenu:
@@ -15,17 +21,22 @@ class InteractiveMenu:
         processor_collector: ProcessorCollector | None = None,
         disk_collector: DiskCollector | None = None,
         memory_collector: MemoryCollector | None = None,
+        system_collector: SystemView | None = None,
+        softwares_collector: SoftwaresCollectors | None = None,
     ) -> None:
         self.processor_collector = processor_collector or ProcessorCollector()
         self.disk_collector = disk_collector or DiskCollector()
         self.memory_collector = memory_collector or MemoryCollector()
+        self.system_collector = system_collector or SystemCollectors()
+        self.softwares_collector = softwares_collector or SoftwaresCollectors()
         
         self.options: dict[str, Callable[[], bool]] = {
             "1": self.show_processor_info,
             "2": self.show_disk_info,
             "3": self.show_memory_info,
             "4": self.show_system_info,
-            "5": self.exit_menu,
+            "5": self.show_softwares_info,
+            "6": self.exit_menu,
         }
 
     def run(self) -> None:
@@ -65,6 +76,10 @@ class InteractiveMenu:
         self._wait_for_user()
         return True
 
+    def show_softwares_info(self) -> bool:
+        SoftwaresView().show()
+        self._wait_for_user()
+        return True
 
     # Extras
     def exit_menu(self) -> bool:
@@ -82,12 +97,13 @@ class InteractiveMenu:
     # Menu opções
     def _show_options(self) -> None:
         print("\n=== Monitor de Especificacoes da Maquina ===")
-        print("1 - Exibir informacoes do processador")
-        print("2 - Exibir informacoes do espaco em disco")
-        print("3 - Exibir informacoes da memoria RAM")
+        print("1 - Exibir do processador")
+        print("2 - Exibir do espaco em disco")
+        print("3 - Exibir da memoria RAM")
         print("\n=== Monitor de Especificacoes da SO ===")
         print("4 - Exibir informacoes do sistema operacional")
-        print("\n \n5 - Sair")
+        print("5 - Exibir os softwares instalados")
+        print("\n \n6 - Sair")
 
 
 
