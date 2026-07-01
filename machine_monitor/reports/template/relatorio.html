@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8">
+    <title>Relatorio do Sistema</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "Segoe UI", Arial, sans-serif;
+            color: #1e293b;
+            background: linear-gradient(160deg, #eef2ff 0%, #dbeafe 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 48px;
+        }
+
+        .page {
+            width: 100%;
+            max-width: 640px;
+            background: #ffffff;
+            border-radius: 24px;
+            overflow: hidden;
+            border: 1px solid #dbeafe;
+            box-shadow: 0 24px 60px rgba(37, 99, 235, 0.18);
+        }
+
+        .header {
+            background: linear-gradient(135deg, #2563eb 0%, #4f46e5 100%);
+            color: #ffffff;
+            padding: 48px 40px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 36px;
+            line-height: 1.15;
+            font-weight: 700;
+        }
+
+        .content {
+            display: flex;
+            flex-direction: column;
+            padding: 40px;
+            gap: 24px;
+        }
+
+        .info-card {
+            border: 1px solid #e2e8f0;
+            border-radius: 18px;
+            overflow: hidden;
+            margin-bottom: 24px;
+        }
+
+        .info-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 24px;
+            padding: 24px 26px;
+            background: #ffffff;
+        }
+
+        .info-row+.info-row {
+            border-top: 1px solid #e2e8f0;
+        }
+
+        .label {
+            font-size: 12px;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: #64748b;
+            font-weight: 600;
+        }
+
+        .value {
+            font-size: 14px;
+            font-weight: 700;
+            color: #0f172a;
+            text-align: right;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="page">
+        <div class="header">
+            <h1>Relatorio do Sistema</h1>
+        </div>
+
+        <div class="content">
+        
+            <div class="info-card">
+                <div class="info-row"> 
+                    <span class="label">Sistema Operacional</span> 
+                    <span class="value">{{SISTEMA}}</span> 
+                </div>
+                <div class="info-row"> 
+                    <span class="label">Versao</span> 
+                    <span class="value">{{VERSAO}}</span> 
+                </div>
+            </div>
+
+            <div class="info-card">
+                <div class="info-row"> 
+                    <span class="label">Processador</span> 
+                    <span class="value">{{PROCESSADOR_NOME}}</span> 
+                </div>
+            </div>
+        
+        </div>
+    </div>
+</body>
+
+</html>

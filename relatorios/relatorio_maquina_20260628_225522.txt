@@ -1,0 +1,157 @@
+RELATORIO DE ESPECIFICACOES DA MAQUINA
+Gerado em: 28/06/2026 22:55:22
+
+=== SISTEMA OPERACIONAL ===
+Sistema Operacional: Windows
+Hostname: duca_pc
+Usuario Atual: 
+Versao: 10.0.26200
+
+=== PROCESSADOR ===
+Processador: AMD64 
+Processador: 12th Gen Intel(R) Core(TM) i7-12700KF
+Memoria RAM total: 15.82 GB
+
+=== MEMORIA RAM ===
+--- Modulo 1 ---
+Fabricante: Corsair
+Capacidade: 16 GB
+Velocidade: 5200 MHz
+Número de peça: CMK16GX5M1B5200C40  
+
+Resumo:
+Capacidade total: 16 GB
+Quantidade de modulos: 1
+
+=== DISCO ===
+--- Unidade 1 ---
+Unidade analisada: C:\
+Espaco total: 930.10 GB
+Espaco usado: 898.78 GB
+Espaco livre: 31.32 GB
+Uso do disco: 96.63%
+--- Unidade 2 ---
+Unidade analisada: D:\
+Espaco total: 953.12 GB
+Espaco usado: 9.01 GB
+Espaco livre: 944.11 GB
+Uso do disco: 0.95%
+--- Unidade 3 ---
+Unidade analisada: P:\
+Espaco total: 465.75 GB
+Espaco usado: 10.22 GB
+Espaco livre: 455.53 GB
+Uso do disco: 2.19%
+
+Resumo:
+Espaco total: 2.29 TB
+Quantidade de unidades: 3
+
+=== SOFTWARE INSTALADO ===
+--- Software 1 ---
+Nome do software: Git
+Versão: 2.54.0
+Fornecedor: The Git Development Community
+--- Software 2 ---
+Nome do software: Microsoft Power BI Desktop (x64)
+Versão: 2.153.910.0
+Fornecedor: Microsoft Corporation
+--- Software 3 ---
+Nome do software: Bizagi Modeler
+Versão: 4.3.0008
+Fornecedor: Bizagi Limited
+--- Software 4 ---
+Nome do software: Microsoft GameInput
+Versão: 3.3.221.0
+Fornecedor: Microsoft Corporation
+--- Software 5 ---
+Nome do software: Epic Games Launcher
+Versão: 1.3.176.0
+Fornecedor: Epic Games, Inc.
+--- Software 6 ---
+Nome do software: EA app
+Versão: 13.735.2.6250
+Fornecedor: Electronic Arts
+--- Software 7 ---
+Nome do software: Cursor
+Versão: 3.6.31
+Fornecedor: Anysphere
+--- Software 8 ---
+Nome do software: Google Chrome
+Versão: 149.0.7827.197
+Fornecedor: Google LLC
+--- Software 9 ---
+Nome do software: LibreWolf
+Versão: 149.0.2-2
+Fornecedor: LibreWolf
+--- Software 10 ---
+Nome do software: Microsoft Edge
+Versão: 149.0.4022.98
+Fornecedor: Microsoft Corporation
+--- Software 11 ---
+Nome do software: Microsoft Edge WebView2 Runtime
+Versão: 149.0.4022.98
+Fornecedor: Microsoft Corporation
+--- Software 12 ---
+Nome do software: OBS Studio
+Versão: 32.1.1
+Fornecedor: OBS Project
+--- Software 13 ---
+Nome do software: Rockstar Games Launcher
+Versão: 1.0.106.2879
+Fornecedor: Rockstar Games
+--- Software 14 ---
+Nome do software: Rockstar Games SDK
+Versão: 2.4.0.216
+Fornecedor: Rockstar Games
+--- Software 15 ---
+Nome do software: Steam
+Versão: 2.10.91.91
+Fornecedor: Valve Corporation
+--- Software 16 ---
+Nome do software: EA app
+Versão: 13.735.2.6250
+Fornecedor: Electronic Arts
+--- Software 17 ---
+Nome do software: Epic Online Services
+Versão: 4.3.1
+Fornecedor: Epic Games, Inc.
+--- Software 18 ---
+Nome do software: Microsoft PowerBI Desktop (x64)
+Versão: 2.153.910.0
+Fornecedor: Microsoft Corporation
+--- Software 19 ---
+Nome do software: CapCut
+Versão: 8.8.0.3774
+Fornecedor: Bytedance Pte. Ltd.
+--- Software 20 ---
+Nome do software: Discord
+Versão: 1.0.9243
+Fornecedor: Discord Inc.
+--- Software 21 ---
+Nome do software: Bizagi Modeler
+Versão: 4.3.0008
+Fornecedor: Bizagi Limited
+--- Software 22 ---
+Nome do software: Microsoft OneDrive
+Versão: 26.106.0603.0003
+Fornecedor: Microsoft Corporation
+--- Software 23 ---
+Nome do software: OpenIV
+Versão: 4.1.1502
+Fornecedor: .black/OpenIV Team
+--- Software 24 ---
+Nome do software: Python 3.14.5
+Versão: 3.14-64
+Fornecedor: Python Software Foundation
+--- Software 25 ---
+Nome do software: Sucrose Wallpaper Engine
+Versão: 26.3.30.0
+Fornecedor: Taiizor
+--- Software 26 ---
+Nome do software: Microsoft Visual Studio Code (User)
+Versão: 1.126.0
+Fornecedor: Microsoft Corporation
+
+Resumo:
+Total de softwares listados: 26

@@ -12,7 +12,8 @@ from machine_monitor.view.Processor_view import ProcessorView
 from machine_monitor.view.Memory_view import MemoryView
 from machine_monitor.view.disk_view import DiskView
 from machine_monitor.view.SystemView import SystemView
-from machine_monitor.view.Softwares_view import SoftwaresView 
+from machine_monitor.view.Softwares_view import SoftwaresView
+from machine_monitor.reports.ReportGenerator import ReportGenerator
 
 
 class InteractiveMenu:
@@ -36,7 +37,8 @@ class InteractiveMenu:
             "3": self.show_memory_info,
             "4": self.show_system_info,
             "5": self.show_softwares_info,
-            "6": self.exit_menu,
+            "6": self.generate_system_report,
+            "7": self.exit_menu,
         }
 
     def run(self) -> None:
@@ -81,6 +83,14 @@ class InteractiveMenu:
         self._wait_for_user()
         return True
 
+    def generate_system_report(self) -> bool:
+        print("\nGerando relatorio em PDF...")
+        report_path = ReportGenerator().generate()
+        print("\nRelatorio PDF gerado com sucesso!")
+        print(f"Arquivo salvo em: {report_path.resolve()}")
+        self._wait_for_user()
+        return True
+
     # Extras
     def exit_menu(self) -> bool:
         print("\nEncerrando o monitor. Ate logo!")
@@ -103,7 +113,9 @@ class InteractiveMenu:
         print("\n=== Monitor de Especificacoes da SO ===")
         print("4 - Exibir informacoes do sistema operacional")
         print("5 - Exibir os softwares instalados")
-        print("\n \n6 - Sair")
+        print("\n=== Relatorios ===")
+        print("6 - Gerar relatorio completo do sistema")
+        print("\n7 - Sair")
 
 
 
