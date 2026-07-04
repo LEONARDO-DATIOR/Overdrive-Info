@@ -3,89 +3,9 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Relatorio do Sistema</title>
+    <title>Relatorio da maquina {{sistema.nome}}</title>
     <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            font-family: "Segoe UI", Arial, sans-serif;
-            color: #1e293b;
-            background: linear-gradient(160deg, #eef2ff 0%, #dbeafe 100%);
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 48px;
-        }
-
-        .page {
-            width: 100%;
-            max-width: 640px;
-            background: #ffffff;
-            border-radius: 24px;
-            overflow: hidden;
-            border: 1px solid #dbeafe;
-            box-shadow: 0 24px 60px rgba(37, 99, 235, 0.18);
-        }
-
-        .header {
-            background: linear-gradient(135deg, #2563eb 0%, #4f46e5 100%);
-            color: #ffffff;
-            padding: 48px 40px;
-            text-align: center;
-        }
-
-        h1 {
-            font-size: 36px;
-            line-height: 1.15;
-            font-weight: 700;
-        }
-
-        .content {
-            display: flex;
-            flex-direction: column;
-            padding: 40px;
-            gap: 24px;
-        }
-
-        .info-card {
-            border: 1px solid #e2e8f0;
-            border-radius: 18px;
-            overflow: hidden;
-            margin-bottom: 24px;
-        }
-
-        .info-row {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 24px;
-            padding: 24px 26px;
-            background: #ffffff;
-        }
-
-        .info-row+.info-row {
-            border-top: 1px solid #e2e8f0;
-        }
-
-        .label {
-            font-size: 12px;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-            color: #64748b;
-            font-weight: 600;
-        }
-
-        .value {
-            font-size: 14px;
-            font-weight: 700;
-            color: #0f172a;
-            text-align: right;
-        }
+        {{css}}
     </style>
 </head>
 
@@ -97,24 +17,61 @@
 
         <div class="content">
         
-            <div class="info-card">
+            <div class="info-card info-card-so">
+                <div class="sub-title-card">
+                    <h2>Sistema Operacional</h2>
+                </div> 
+                
                 <div class="info-row"> 
-                    <span class="label">Sistema Operacional</span> 
-                    <span class="value">{{SISTEMA}}</span> 
-                </div>
-                <div class="info-row"> 
+                    <p>Windows 11</p>
                     <span class="label">Versao</span> 
-                    <span class="value">{{VERSAO}}</span> 
+                    <span class="value">{{sistema.versao}}</span> 
                 </div>
             </div>
 
             <div class="info-card">
+                <div class="sub-title-card">
+                    <h2>Processador</h2>
+                </div> 
+
                 <div class="info-row"> 
                     <span class="label">Processador</span> 
-                    <span class="value">{{PROCESSADOR_NOME}}</span> 
+                    <span class="value">{{processador.processador}}</span> 
                 </div>
             </div>
-        
+
+            <div class="info-card info-card-memoria">
+                <div class="sub-title-card sub-title-card-memoria">
+                    <h2>Memoria RAM</h2>
+                </div> 
+                {% for memoria in memorias %}   
+                <div class="info-row info-row-memoria"> 
+                    <span>Memoria RAM - {{loop.index}}</span>
+                    <ul>
+                        <li>Fabricante: {{memoria.fabricant}}</li>
+                        <li>Capacidade: {{memoria.capacidade}} GB</li>
+                        <li>Velocidade: {{memoria.velocidade}} MHz</li>
+                    </ul>
+                </div>
+                {% endfor %}
+            </div>
+            
+            <div class="info-card info-card-disco">
+                <div class="sub-title-card sub-title-card-disco">
+                    <h2>Discos</h2>
+                </div>
+                {% for disco in discos %}
+                <div class="info-row info-row-disco">
+                    <span>Disco: {{disco.unidade}}</span>
+                    <ul>
+                        <li>Espaço total: {{disco.get_total_bytes()}}</li>
+                        <li>Espaço utilizado: {{disco.get_usados_bytes()}}</li>
+                        <li>Espaço livre: {{disco.get_livre_bytes()}}</li>
+                    </ul>
+                    <p>Porcentual de uso do disco: {{disco.used_percent}}%</p>
+                </div>
+                {% endfor %}
+            </div>
         </div>
     </div>
 </body>

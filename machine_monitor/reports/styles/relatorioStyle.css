@@ -1,0 +1,168 @@
+        /* ==========================
+   RESET
+========================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+    background: #eef2f7;
+    color: #2c3e50;
+    padding: 40px;
+}
+
+/* ==========================
+   PÁGINA
+========================== */
+
+.page {
+    max-width: 900px;
+    margin: auto;
+    background: white;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 8px 30px rgba(0,0,0,.12);
+}
+
+/* ==========================
+   CABEÇALHO
+========================== */
+
+.header {
+    background: #1e88e5;
+    color: white;
+    padding: 35px;
+    text-align: center;
+}
+
+.header h1 {
+    font-size: 30px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+/* ==========================
+   CONTEÚDO
+========================== */
+
+.content {
+    padding: 35px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+/* ==========================
+   CARDS
+========================== */
+
+.info-card {
+    border: 1px solid #dbe5f1;
+    border-radius: 10px;
+    overflow: hidden;
+    background: #fff;
+}
+
+.sub-title-card {
+    background: #f5f8fc;
+    border-bottom: 1px solid #dbe5f1;
+    padding: 14px 20px;
+}
+
+.sub-title-card-disco {
+    grid-column: 1 / -1;
+}
+
+.sub-title-card h2 {
+    font-size: 20px;
+    color: #1565c0;
+}
+
+/* ==========================
+   LINHAS DE INFORMAÇÃO
+========================== */
+
+.info-row {
+    display: grid;
+    gap: 12px 20px;
+    padding: 18px 20px;
+    align-items: center;
+}
+
+.label {
+    font-weight: 600;
+    color: #5f6b7a;
+}
+
+.value {
+    color: #222;
+}
+
+/* ==========================
+   PARÁGRAFOS
+========================== */
+
+.info-row p {
+    grid-column: 1 / -1;
+    font-size: 17px;
+    font-weight: 600;
+    color: #1e88e5;
+    margin-bottom: 12px;
+}
+
+/* ==========================
+   LISTAS (FOR)
+========================== */
+
+.info-row span {
+    margin-bottom: 6px;
+}
+
+.info-row-disco {
+    gap: 12px 20px;
+    align-items: center;
+    border: 1px solid #97999b;
+    border-radius: 10px;
+    margin: 1em;
+    padding: 0;
+
+    span {
+        font-size: 14px;
+        font-weight: 600;
+        background: #1e88e5;
+        color: white;
+        padding: 8px 12px;
+        border-radius: 6px;
+    }
+}
+
+.info-row-memoria {
+    gap: 12px 20px;
+    align-items: center;
+    border: 1px solid #97999b;
+    border-radius: 10px;
+    margin: 1em;
+    padding: 0;
+    
+}
+
+/* ==========================
+   CARD ESPECIAL
+========================== */
+
+.info-card-so:hover {
+    border-left: 6px solid #1e88e5;
+}
+
+.info-card-memoria:hover {
+    border-left: 6px solid #1e88e5;
+}
+
+.info-card-disco {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}

@@ -13,7 +13,6 @@ class MemoryCollector:
                 fabricant=memoria.Manufacturer,
                 capacidade=int(memoria.Capacity),
                 velocidade=int(memoria.Speed),
-                part_number=memoria.PartNumber,
             )
 
             memorias.append(memoria)

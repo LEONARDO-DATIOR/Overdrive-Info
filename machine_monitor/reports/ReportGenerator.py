@@ -2,10 +2,13 @@ from datetime import datetime
 from html import escape
 from pathlib import Path
 
+from jinja2 import Environment, FileSystemLoader
 from playwright.sync_api import sync_playwright
 
+from machine_monitor.collectors.DiskCollector import DiskCollector
 from machine_monitor.collectors.SystemCollectors import SystemCollectors
 from machine_monitor.collectors.ProcessorCollector import ProcessorCollector
+from machine_monitor.collectors.MemoryCollector import MemoryCollector
 
 
 class ReportGenerator:
@@ -14,16 +17,22 @@ class ReportGenerator:
         output_dir: Path | str = "relatorios",
         system_collector: SystemCollectors | None = None,
         processor_collector: ProcessorCollector | None = None,
+        disk_collector: DiskCollector | None = None,
+        memory_collector: MemoryCollector | None = None,
     ) -> None:
         self.output_dir = Path(output_dir)
         self.system_collector = system_collector or SystemCollectors()
         self.processor_collector = processor_collector or ProcessorCollector()
+        self.disk_collector = disk_collector or DiskCollector()
+        self.memory_collector = memory_collector or MemoryCollector()
 
     def generate(self) -> Path:
         sistema = self.system_collector.get_system_info()
         processador = self.processor_collector.collect()
+        memorias = self.memory_collector.collect()
+        discos = self.disk_collector.collect()
         caminho_salvo = self.carregar_caminho_relatorio()
-        html = self._carregar_html(sistema, processador)
+        html = self._carregar_html(sistema, processador, memorias, discos)
 
         self.output_dir.mkdir(parents=True, exist_ok=True)
         self._salvar_pdf(html, caminho_salvo)
@@ -47,21 +56,22 @@ class ReportGenerator:
         sistema = self.system_collector.get_system_info()
         return self.output_dir / f"relatorio_sistema_{sistema.hostname}.pdf"
 
-    def _carregar_html(self, sistema, processador) -> str:
-        caminho = (
-            Path(__file__).parent
-            / "template"
-            / "relatorio.html"
+    def _carregar_html(self, sistema, processador, memorias, discos) -> str:
+        pasta_templates = Path(__file__).parent / "template"
+        css = ( Path(__file__).parent / "styles" / "relatorioStyle.css").read_text(encoding="utf-8")
+
+        env = Environment(
+            loader=FileSystemLoader(pasta_templates)
         )
+        template = env.get_template("relatorio.html")
 
-        html = caminho.read_text(encoding="utf-8")
 
-        html = (
-            html
-            .replace("{{SISTEMA}}", escape(sistema.sistema_operacional))
-            .replace("{{VERSAO}}", escape(sistema.versao))
-            .replace("{{HOSTNAME}}", escape(sistema.hostname))
-            .replace("{{PROCESSADOR_NOME}}", escape(processador.processador))
+        html = template.render(
+            sistema=sistema,
+            processador=processador,
+            memorias=memorias,
+            discos=discos,
+            css=css
         )
 
         return html

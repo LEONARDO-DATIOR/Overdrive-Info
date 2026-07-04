@@ -39,4 +39,5 @@ Essa separacao facilita adaptar o projeto futuramente para outras interfaces, co
 - psutil
 - wmi
 - winreg
-- playwright
+- playwright ( HTML - Relatorio )
+- Jinja2 ( HTML - Relatorio )
