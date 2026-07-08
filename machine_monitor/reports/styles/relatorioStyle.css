@@ -45,20 +45,12 @@ body {
     letter-spacing: 1px;
 }
 
-/* ==========================
-   CONTEÚDO
-========================== */
-
 .content {
     padding: 35px;
     display: flex;
     flex-direction: column;
     gap: 25px;
 }
-
-/* ==========================
-   CARDS
-========================== */
 
 .info-card {
     border: 1px solid #dbe5f1;
@@ -73,9 +65,6 @@ body {
     padding: 14px 20px;
 }
 
-.sub-title-card-disco {
-    grid-column: 1 / -1;
-}
 
 .sub-title-card h2 {
     font-size: 20px;
@@ -93,6 +82,11 @@ body {
     align-items: center;
 }
 
+.info-row span {
+    margin-bottom: 6px;
+}
+
+
 .label {
     font-weight: 600;
     color: #5f6b7a;
@@ -102,9 +96,6 @@ body {
     color: #222;
 }
 
-/* ==========================
-   PARÁGRAFOS
-========================== */
 
 .info-row p {
     grid-column: 1 / -1;
@@ -115,11 +106,53 @@ body {
 }
 
 /* ==========================
-   LISTAS (FOR)
+   SISTEMA OPERACIONAL
 ========================== */
 
-.info-row span {
-    margin-bottom: 6px;
+/* ==========================
+   PROCESSADOR
+========================== */
+
+
+/* ==========================
+   MEMÓRIA RAM
+========================== */
+.info-row-memoria {
+    border: 1px solid #97999b;
+    border-radius: 10px;
+    margin: 1em;
+    height: 100%;
+    padding: 0;
+}
+
+.info-row-memoria span {
+    font-size: 14px;
+    font-weight: 600;
+    background: #1e88e5;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 6px;
+}
+
+.info-row-memoria ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 1em;
+}
+
+
+/* ==========================
+    DISCO
+========================== */
+.info-card-disco {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.sub-title-card-disco {
+    grid-column: 1 / -1;
 }
 
 .info-row-disco {
@@ -140,15 +173,15 @@ body {
     }
 }
 
-.info-row-memoria {
-    gap: 12px 20px;
-    align-items: center;
-    border: 1px solid #97999b;
-    border-radius: 10px;
-    margin: 1em;
-    padding: 0;
-    
+.info-row-disco ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 1em;
 }
+
+
 
 /* ==========================
    CARD ESPECIAL
@@ -162,7 +195,4 @@ body {
     border-left: 6px solid #1e88e5;
 }
 
-.info-card-disco {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-}
+

@@ -6,8 +6,6 @@ class ProcessorView:
         Processor = ProcessorCollector().collect()
 
         print("\n=== Processador ===")
-        print(f"Processador: {Processor.processador} | Arquitetura: {Processor.maquina}")
-        if Processor.total_ram_bytes is not None:
-            print(f"Memória RAM Total: {Processor.total_ram_bytes // (1024**3)} GB")
-        else:
-            print("Memória RAM Total: Não informado")
+        print(f"Processador: {Processor.processador} | Arquitetura: {Processor.maquina} | Fabricante: {Processor.fabricante}")
+        print(f"Cores: {Processor.cores} | Threads: {Processor.threads}")
+        print(f"Frequência: {Processor.frequencia} MHz")
