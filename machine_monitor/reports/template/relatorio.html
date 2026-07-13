@@ -29,15 +29,28 @@
                 </div>
             </div>
 
-            <div class="info-card">
+            <div class="info-card info-card-processador">
                 <div class="sub-title-card">
                     <h2>Processador</h2>
                 </div> 
 
-                <div class="info-row"> 
+                <div class="info-row info-row-processador"> 
                     <span class="label">Processador</span> 
-                    <span class="value">{{processador.processador}}</span> 
+                    <p class="value">{{processador.processador}}</p> 
                 </div>
+                <div class="info-row info-row-processador"> 
+                    <span class="label">Fabricante</span> 
+                    <p class="value">{{processador.fabricante}}</p>
+                </div>
+                <div class="info-row info-row-processador"> 
+                    <span class="label">Frequência</span> 
+                    <p class="value">{{processador.frequencia}} MHz</p>
+                </div>
+                 <div class="info-row info-row-processador"> 
+                    <span class="label">Cores | Threads</span> 
+                    <p class="value">{{processador.cores}} Cores | {{processador.threads}} Threads</p>
+                </div>
+             
             </div>
 
             <div class="info-card info-card-memoria">

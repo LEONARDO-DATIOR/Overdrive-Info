@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8">
+    <title>Relatorio da maquina </title>
+    <style>
+                /* ==========================
+   RESET
+========================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+    background: #eef2f7;
+    color: #2c3e50;
+    padding: 40px;
+}
+
+/* ==========================
+   PÁGINA
+========================== */
+
+.page {
+    max-width: 900px;
+    margin: auto;
+    background: white;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 8px 30px rgba(0,0,0,.12);
+}
+
+/* ==========================
+   CABEÇALHO
+========================== */
+
+.header {
+    background: #1e88e5;
+    color: white;
+    padding: 35px;
+    text-align: center;
+}
+
+.header h1 {
+    font-size: 30px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.content {
+    padding: 35px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.info-card {
+    border: 1px solid #dbe5f1;
+    border-radius: 10px;
+    overflow: hidden;
+    background: #fff;
+}
+
+.sub-title-card {
+    background: #f5f8fc;
+    border-bottom: 1px solid #dbe5f1;
+    padding: 14px 20px;
+}
+
+
+.sub-title-card h2 {
+    font-size: 20px;
+    color: #1565c0;
+}
+
+/* ==========================
+   LINHAS DE INFORMAÇÃO
+========================== */
+
+.info-row {
+    display: grid;
+    gap: 12px 20px;
+    padding: 18px 20px;
+    align-items: center;
+}
+
+.info-row span {
+    margin-bottom: 6px;
+}
+
+
+.label {
+    font-weight: 600;
+    color: #5f6b7a;
+}
+
+.value {
+    color: #222;
+}
+
+
+.info-row p {
+    grid-column: 1 / -1;
+    font-size: 17px;
+    font-weight: 600;
+    color: #1e88e5;
+    margin-bottom: 12px;
+}
+
+/* ==========================
+   SISTEMA OPERACIONAL
+========================== */
+
+/* ==========================
+   PROCESSADOR
+========================== */
+.info-card-processador {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    padding: 24px;
+
+    .sub-title-card {
+        width: calc(100% + 48px);
+        margin: -24px -24px 0;
+    }
+
+    .info-row-processador {
+        flex: 1 1 calc(50% - 12px);
+        padding: 10px;
+
+        border: 1px solid #dbe5f1;
+        border-radius: 14px;
+        overflow: hidden;
+        background: #fff;
+
+        display: flex;
+        flex-direction: column;
+
+        transition: .2s ease;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, .05);
+
+        &:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, .08);
+        }
+
+        .label {
+            display: block;
+            padding: 14px 18px;
+            width: 100%;
+            border-radius: 14px 14px 0 0;
+            background: linear-gradient(90deg, #2f90ef, #1d74d4);
+            color: #fff;
+            font-size: .95rem;
+            font-weight: 600;
+        }
+
+        .value {
+            margin: 0;
+            padding: 22px 18px;
+            font-size: 1.05rem;
+            font-weight: 500;
+            color: #2f3d4f;
+            line-height: 1.5;
+            word-break: break-word;
+        }
+    }
+
+    .info-row-processador:last-child {
+        max-width: calc(50% - 12px);
+    }
+    
+}
+
+
+/* ==========================
+   MEMÓRIA RAM
+========================== */
+.info-row-memoria {
+    border: 1px solid #97999b;
+    border-radius: 10px;
+    margin: 1em;
+    height: 100%;
+    padding: 0;
+}
+
+.info-row-memoria span {
+    font-size: 14px;
+    font-weight: 600;
+    background: #1e88e5;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 6px;
+}
+
+.info-row-memoria ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 1em;
+}
+
+
+/* ==========================
+    DISCO
+========================== */
+.info-card-disco {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.sub-title-card-disco {
+    grid-column: 1 / -1;
+}
+
+.info-row-disco {
+    gap: 12px 20px;
+    align-items: center;
+    border: 1px solid #97999b;
+    border-radius: 10px;
+    margin: 1em;
+    padding: 0;
+
+    span {
+        font-size: 14px;
+        font-weight: 600;
+        background: #1e88e5;
+        color: white;
+        padding: 8px 12px;
+        border-radius: 6px;
+    }
+}
+
+.info-row-disco ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 1em;
+}
+
+
+
+/* ==========================
+   CARD ESPECIAL
+========================== */
+
+.info-card-so:hover {
+    border-left: 6px solid #1e88e5;
+}
+
+.info-card-memoria:hover {
+    border-left: 6px solid #1e88e5;
+}
+
+
+
+    </style>
+</head>
+
+<body>
+    <div class="page">
+        <div class="header">
+            <h1>Relatorio do Sistema</h1>
+        </div>
+
+        <div class="content">
+        
+            <div class="info-card info-card-so">
+                <div class="sub-title-card">
+                    <h2>Sistema Operacional</h2>
+                </div> 
+                
+                <div class="info-row"> 
+                    <p>Windows 11</p>
+                    <span class="label">Versao</span> 
+                    <span class="value">10.0.26200</span> 
+                </div>
+            </div>
+
+            <div class="info-card info-card-processador">
+                <div class="sub-title-card">
+                    <h2>Processador</h2>
+                </div> 
+
+                <div class="info-row info-row-processador"> 
+                    <span class="label">Processador</span> 
+                    <p class="value">12th Gen Intel(R) Core(TM) i7-12700KF</p> 
+                </div>
+                <div class="info-row info-row-processador"> 
+                    <span class="label">Fabricante</span> 
+                    <p class="value">GenuineIntel</p>
+                </div>
+                <div class="info-row info-row-processador"> 
+                    <span class="label">Frequência</span> 
+                    <p class="value">3600.0 MHz</p>
+                </div>
+                 <div class="info-row info-row-processador"> 
+                    <span class="label">Cores | Threads</span> 
+                    <p class="value">12 Cores | 20 Threads</p>
+                </div>
+             
+            </div>
+
+            <div class="info-card info-card-memoria">
+                <div class="sub-title-card sub-title-card-memoria">
+                    <h2>Memoria RAM</h2>
+                </div> 
+                   
+                <div class="info-row info-row-memoria"> 
+                    <span>Memoria RAM - 1</span>
+                    <ul>
+                        <li>Fabricante: Corsair</li>
+                        <li>Capacidade: 16.0 GB</li>
+                        <li>Velocidade: 5200 MHz</li>
+                    </ul>
+                </div>
+                
+            </div>
+            
+            <div class="info-card info-card-disco">
+                <div class="sub-title-card sub-title-card-disco">
+                    <h2>Discos</h2>
+                </div>
+                
+                <div class="info-row info-row-disco">
+                    <span>Disco: C:\</span>
+                    <ul>
+                        <li>Espaço total: 930.10 GB</li>
+                        <li>Espaço utilizado: 906.90 GB</li>
+                        <li>Espaço livre: 23.20 GB</li>
+                    </ul>
+                    <p>Porcentual de uso do disco: 97.51%</p>
+                </div>
+                
+                <div class="info-row info-row-disco">
+                    <span>Disco: D:\</span>
+                    <ul>
+                        <li>Espaço total: 953.12 GB</li>
+                        <li>Espaço utilizado: 11.40 GB</li>
+                        <li>Espaço livre: 941.71 GB</li>
+                    </ul>
+                    <p>Porcentual de uso do disco: 1.20%</p>
+                </div>
+                
+                <div class="info-row info-row-disco">
+                    <span>Disco: P:\</span>
+                    <ul>
+                        <li>Espaço total: 465.75 GB</li>
+                        <li>Espaço utilizado: 46.98 GB</li>
+                        <li>Espaço livre: 418.76 GB</li>
+                    </ul>
+                    <p>Porcentual de uso do disco: 10.09%</p>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

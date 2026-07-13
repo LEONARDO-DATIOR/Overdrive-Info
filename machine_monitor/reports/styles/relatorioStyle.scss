@@ -112,6 +112,64 @@ body {
 /* ==========================
    PROCESSADOR
 ========================== */
+.info-card-processador {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    padding: 24px;
+
+    .sub-title-card {
+        width: calc(100% + 48px);
+        margin: -24px -24px 0;
+    }
+
+    .info-row-processador {
+        flex: 1 1 calc(50% - 12px);
+        padding: 10px;
+
+        border: 1px solid #dbe5f1;
+        border-radius: 14px;
+        overflow: hidden;
+        background: #fff;
+
+        display: flex;
+        flex-direction: column;
+
+        transition: .2s ease;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, .05);
+
+        &:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, .08);
+        }
+
+        .label {
+            display: block;
+            padding: 14px 18px;
+            width: 100%;
+            border-radius: 14px 14px 0 0;
+            background: linear-gradient(90deg, #2f90ef, #1d74d4);
+            color: #fff;
+            font-size: .95rem;
+            font-weight: 600;
+        }
+
+        .value {
+            margin: 0;
+            padding: 22px 18px;
+            font-size: 1.05rem;
+            font-weight: 500;
+            color: #2f3d4f;
+            line-height: 1.5;
+            word-break: break-word;
+        }
+    }
+
+    .info-row-processador:last-child {
+        max-width: calc(50% - 12px);
+    }
+    
+}
 
 
 /* ==========================

@@ -84,9 +84,9 @@ class InteractiveMenu:
         return True
 
     def generate_system_report(self) -> bool:
-        print("\nGerando relatorio em PDF...")
-        report_path = ReportGenerator().generate()
-        print("\nRelatorio PDF gerado com sucesso!")
+        print("\nGerando relatorio em HTML...")
+        report_path = ReportGenerator().gerar()
+        print("\nRelatorio HTML gerado com sucesso!")
         print(f"Arquivo salvo em: {report_path.resolve()}")
         self._wait_for_user()
         return True
