@@ -239,8 +239,67 @@ body {
     padding: 1em;
 }
 
+/* ==========================
+   SOFTWARES
+========================== */
 
 
+.info-card-software {
+
+    .info-all-softwares {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .info-row-software {
+        display: flex;
+        flex-direction: column;
+
+        border: 1px solid #dbe5f1;
+        border-radius: 12px;
+        overflow: hidden;
+        background: #fff;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, .05);
+
+        transition: .2s ease;
+
+        &:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 18px rgba(0, 0, 0, .08);
+        }
+
+        span {
+            display: block;
+            width: 100%;
+
+            padding: 12px 16px;
+
+            background: linear-gradient(90deg, #2f90ef, #1976d2);
+            color: #fff;
+
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        p {
+            margin: 0;
+            padding: 6px 16px;
+            font-size: .9rem;
+            color: #4b5d73;
+            line-height: 1.5;
+
+            &:first-of-type {
+                padding-top: 16px;
+            }
+
+            &:last-of-type {
+                padding-bottom: 18px;
+            }
+        }
+    }
+}
 /* ==========================
    CARD ESPECIAL
 ========================== */

@@ -85,6 +85,23 @@
                 </div>
                 {% endfor %}
             </div>
+
+            <div class="info-card info-card-software">
+                <div class="sub-title-card sub-title-card-software">
+                    <h2>Softwares</h2>
+                </div>
+                <div class="info-all-softwares">
+                    {% for software in softwares %}
+                    <div class="info-row-software">
+                        <span>{{software.nome}}</span>
+                        <p>Versão: {{software.versao}}</p>
+                        <p>Fornecedor: {{software.fornecedor}}</p>
+                    </div>
+                    {% endfor %}
+                </div>
+                
+            </div>
+        
         </div>
     </div>
 </body>

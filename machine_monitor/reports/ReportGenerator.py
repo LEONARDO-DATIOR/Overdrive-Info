@@ -10,6 +10,7 @@ from machine_monitor.collectors.DiskCollector import DiskCollector
 from machine_monitor.collectors.SystemCollectors import SystemCollectors
 from machine_monitor.collectors.ProcessorCollector import ProcessorCollector
 from machine_monitor.collectors.MemoryCollector import MemoryCollector
+from machine_monitor.collectors.SoftwaresCollectors import SoftwaresCollectors
 
 
 
@@ -21,20 +22,24 @@ class ReportGenerator:
         processor_collector: ProcessorCollector | None = None,
         disk_collector: DiskCollector | None = None,
         memory_collector: MemoryCollector | None = None,
+        softwares_collector: SoftwaresCollectors | None = None,
     ) -> None:
         self.output_dir = Path(output_dir)
         self.system_collector = system_collector or SystemCollectors()
         self.processor_collector = processor_collector or ProcessorCollector()
         self.disk_collector = disk_collector or DiskCollector()
         self.memory_collector = memory_collector or MemoryCollector()
+        self.softwares_collector = softwares_collector or SoftwaresCollectors()
 
     def gerar(self) -> Path:
         sistema = self.system_collector.get_system_info()
         processador = self.processor_collector.collect()
         memorias = self.memory_collector.collect()
         discos = self.disk_collector.collect()
+        softwares = self.softwares_collector.collect()
+
         caminho_salvo = self.carregar_caminho_relatorio_html()
-        html = self._carregar_html(sistema, processador, memorias, discos)
+        html = self._carregar_html(sistema, processador, memorias, discos, softwares)
 
         self.output_dir.mkdir(parents=True, exist_ok=True)
         self.salvar_html(html, caminho_salvo)
@@ -50,13 +55,14 @@ class ReportGenerator:
         return self.output_dir / f"relatorio_sistema_{sistema.hostname}.html"
 
 
-    def _carregar_html(self, sistema, processador, memorias, discos) -> str:
+    def _carregar_html(self, sistema, processador, memorias, discos, softwares) -> str:
         pasta_templates = Path(__file__).parent / "template"
         css = ( Path(__file__).parent / "styles" / "relatorioStyle.scss").read_text(encoding="utf-8")
 
         env = Environment(
             loader=FileSystemLoader(pasta_templates)
         )
+
         template = env.get_template("relatorio.html")
 
 
@@ -65,7 +71,8 @@ class ReportGenerator:
             processador=processador,
             memorias=memorias,
             discos=discos,
-            css=css
+            css=css,
+            softwares=softwares,
         )
 
         return html

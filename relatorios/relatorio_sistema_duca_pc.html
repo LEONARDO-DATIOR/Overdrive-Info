@@ -246,8 +246,67 @@ body {
     padding: 1em;
 }
 
+/* ==========================
+   SOFTWARES
+========================== */
 
 
+.info-card-software {
+
+    .info-all-softwares {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .info-row-software {
+        display: flex;
+        flex-direction: column;
+
+        border: 1px solid #dbe5f1;
+        border-radius: 12px;
+        overflow: hidden;
+        background: #fff;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, .05);
+
+        transition: .2s ease;
+
+        &:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 18px rgba(0, 0, 0, .08);
+        }
+
+        span {
+            display: block;
+            width: 100%;
+
+            padding: 12px 16px;
+
+            background: linear-gradient(90deg, #2f90ef, #1976d2);
+            color: #fff;
+
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        p {
+            margin: 0;
+            padding: 6px 16px;
+            font-size: .9rem;
+            color: #4b5d73;
+            line-height: 1.5;
+
+            &:first-of-type {
+                padding-top: 16px;
+            }
+
+            &:last-of-type {
+                padding-bottom: 18px;
+            }
+        }
+    }
+}
 /* ==========================
    CARD ESPECIAL
 ========================== */
@@ -334,10 +393,10 @@ body {
                     <span>Disco: C:\</span>
                     <ul>
                         <li>Espaço total: 930.10 GB</li>
-                        <li>Espaço utilizado: 906.90 GB</li>
-                        <li>Espaço livre: 23.20 GB</li>
+                        <li>Espaço utilizado: 907.12 GB</li>
+                        <li>Espaço livre: 22.98 GB</li>
                     </ul>
-                    <p>Porcentual de uso do disco: 97.51%</p>
+                    <p>Porcentual de uso do disco: 97.53%</p>
                 </div>
                 
                 <div class="info-row info-row-disco">
@@ -361,6 +420,251 @@ body {
                 </div>
                 
             </div>
+
+            <div class="info-card info-card-software">
+                <div class="sub-title-card sub-title-card-software">
+                    <h2>Softwares</h2>
+                </div>
+                <div class="info-all-softwares">
+                    
+                    <div class="info-row-software">
+                        <span>Git</span>
+                        <p>Versão: 2.54.0</p>
+                        <p>Fornecedor: The Git Development Community</p>
+                    </div>
+                    
+                    <div class="info-row-software">
+                        <span>Microsoft Power</span>
+                        <p>Versão: 2.153.910.0</p>
+                        <p>Fornecedor: Microsoft Corporation</p>
+                    </div>
+                    
+                    <div class="info-row-software">
+                        <span>Bizagi Modeler</span>
+                        <p>Versão: 4.3.0008</p>
+                        <p>Fornecedor: Bizagi Limited</p>
+                    </div>
+                    
+                    <div class="info-row-software">
+                        <span>Microsoft GameI</span>
+                        <p>Versão: 3.3.221.0</p>
+                        <p>Fornecedor: Microsoft Corporation</p>
+                    </div>
+                    
+                    <div class="info-row-software">
+                        <span>Microsoft Windo</span>
+                        <p>Versão: 64.112.53617</p>
+                        <p>Fornecedor: Microsoft Corporation</p>
+                    </div>
+                    
+                    <div class="info-row-software">
+                        <span>Epic Games Laun</span>
+                        <p>Versão: 1.3.176.0</p>
+                        <p>Fornecedor: Epic Games, Inc.</p>
+                    </div>
+                    
+                    <div class="info-row-software">
+                        <span>Microsoft .NET </span>
+                        <p>Versão: 64.112.53549</p>
+                        <p>Fornecedor: Microsoft Corporation</p>
+                    </div>
+                    
+                    <div class="info-row-software">
+                        <span>MongoDB 8.3.4 2</span>
+                        <p>Versão: 8.3.4</p>
+                        <p>Fornecedor: MongoDB Inc.</p>
+                    </div>
+                    
+                    <div class="info-row-software">
+                        <span>NVIDIA Driver d</span>
+                        <p>Versão: 591.86</p>
+                        <p>Fornecedor: NVIDIA Corporation</p>
+                    </div>
+                    
+                    <div class="info-row-software">
+                        <span>NVIDIA Install </span>
+                        <p>Versão: 2.1002.438.0</p>
+                        <p>Fornecedor: NVIDIA Corporation</p>
+                    </div>
+                    
+                    <div class="info-row-software">
+                        <span>EA app</span>
+                        <p>Versão: 13.735.2.6250</p>
+                        <p>Fornecedor: Electronic Arts</p>
+                    </div>
+                    
+                    <div class="info-row-software">
+                        <span>Microsoft .NET </span>
+                        <p>Versão: 64.112.53549</p>
+                        <p>Fornecedor: Microsoft Corporation</p>
+                    </div>
+                    
+                    <div class="info-row-software">
+                        <span>Cursor</span>
+                        <p>Versão: 3.6.31</p>
+                        <p>Fornecedor: Anysphere</p>
+                    </div>
+                    
+                    <div class="info-row-software">
+                        <span>Microsoft .NET </span>
+                        <p>Versão: 64.112.53549</p>
+                        <p>Fornecedor: Microsoft Corporation</p>
+                    </div>
+                    
+                    <div class="info-row-software">
+                        <span>Google Chrome</span>
+                        <p>Versão: 150.0.7871.102</p>
+                        <p>Fornecedor: Google LLC</p>
+                    </div>
+                    
+                    <div class="info-row-software">
+                        <span>Microsoft Edge</span>
+                        <p>Versão: 150.0.4078.65</p>
+                        <p>Fornecedor: Microsoft Corporation</p>
+                    </div>
+                    
+                    <div class="info-row-software">
+                        <span>Microsoft Edge </span>
+                        <p>Versão: 150.0.4078.65</p>
+                        <p>Fornecedor: Microsoft Corporation</p>
+                    </div>
+                    
+                    <div class="info-row-software">
+                        <span>OBS Studio</span>
+                        <p>Versão: 32.1.1</p>
+                        <p>Fornecedor: OBS Project</p>
+                    </div>
+                    
+                    <div class="info-row-software">
+                        <span>Rockstar Games </span>
+                        <p>Versão: 1.0.106.2879</p>
+                        <p>Fornecedor: Rockstar Games</p>
+                    </div>
+                    
+                    <div class="info-row-software">
+                        <span>Rockstar Games </span>
+                        <p>Versão: 2.4.0.216</p>
+                        <p>Fornecedor: Rockstar Games</p>
+                    </div>
+                    
+                    <div class="info-row-software">
+                        <span>Steam</span>
+                        <p>Versão: 2.10.91.91</p>
+                        <p>Fornecedor: Valve Corporation</p>
+                    </div>
+                    
+                    <div class="info-row-software">
+                        <span>EA app</span>
+                        <p>Versão: 13.735.2.6250</p>
+                        <p>Fornecedor: Electronic Arts</p>
+                    </div>
+                    
+                    <div class="info-row-software">
+                        <span>Microsoft .NET </span>
+                        <p>Versão: 4.8.3928</p>
+                        <p>Fornecedor: Microsoft Corporation</p>
+                    </div>
+                    
+                    <div class="info-row-software">
+                        <span>Epic Online Ser</span>
+                        <p>Versão: 4.3.1</p>
+                        <p>Fornecedor: Epic Games, Inc.</p>
+                    </div>
+                    
+                    <div class="info-row-software">
+                        <span>ClickOnce Boots</span>
+                        <p>Versão: 4.8.04162</p>
+                        <p>Fornecedor: Microsoft Corporation</p>
+                    </div>
+                    
+                    <div class="info-row-software">
+                        <span>Microsoft Windo</span>
+                        <p>Versão: 8.0.28.36119</p>
+                        <p>Fornecedor: Microsoft Corporation</p>
+                    </div>
+                    
+                    <div class="info-row-software">
+                        <span>Microsoft .NET </span>
+                        <p>Versão: 4.8.03928</p>
+                        <p>Fornecedor: Microsoft Corporation</p>
+                    </div>
+                    
+                    <div class="info-row-software">
+                        <span>Microsoft .NET </span>
+                        <p>Versão: 4.8.03761</p>
+                        <p>Fornecedor: Microsoft Corporation</p>
+                    </div>
+                    
+                    <div class="info-row-software">
+                        <span>Microsoft .NET </span>
+                        <p>Versão: 4.8.03761</p>
+                        <p>Fornecedor: Microsoft Corporation</p>
+                    </div>
+                    
+                    <div class="info-row-software">
+                        <span>Microsoft Power</span>
+                        <p>Versão: 2.153.910.0</p>
+                        <p>Fornecedor: Microsoft Corporation</p>
+                    </div>
+                    
+                    <div class="info-row-software">
+                        <span>CapCut</span>
+                        <p>Versão: 8.9.1.3802</p>
+                        <p>Fornecedor: Bytedance Pte. Ltd.</p>
+                    </div>
+                    
+                    <div class="info-row-software">
+                        <span>Discord</span>
+                        <p>Versão: 1.0.9245</p>
+                        <p>Fornecedor: Discord Inc.</p>
+                    </div>
+                    
+                    <div class="info-row-software">
+                        <span>Bizagi Modeler</span>
+                        <p>Versão: 4.3.0008</p>
+                        <p>Fornecedor: Bizagi Limited</p>
+                    </div>
+                    
+                    <div class="info-row-software">
+                        <span>MongoDB Compass</span>
+                        <p>Versão: 1.49.11</p>
+                        <p>Fornecedor: MongoDB Inc</p>
+                    </div>
+                    
+                    <div class="info-row-software">
+                        <span>Microsoft OneDr</span>
+                        <p>Versão: 26.108.0607.0002</p>
+                        <p>Fornecedor: Microsoft Corporation</p>
+                    </div>
+                    
+                    <div class="info-row-software">
+                        <span>OpenIV</span>
+                        <p>Versão: 4.1.1502</p>
+                        <p>Fornecedor: .black/OpenIV Team</p>
+                    </div>
+                    
+                    <div class="info-row-software">
+                        <span>Python 3.14.5</span>
+                        <p>Versão: 3.14-64</p>
+                        <p>Fornecedor: Python Software Foundation</p>
+                    </div>
+                    
+                    <div class="info-row-software">
+                        <span>Sucrose Wallpap</span>
+                        <p>Versão: 26.3.30.0</p>
+                        <p>Fornecedor: Taiizor</p>
+                    </div>
+                    
+                    <div class="info-row-software">
+                        <span>Microsoft Visua</span>
+                        <p>Versão: 1.128.0</p>
+                        <p>Fornecedor: Microsoft Corporation</p>
+                    </div>
+                    
+                </div>
+                
+            </div>
+        
         </div>
     </div>
 </body>
