@@ -73,6 +73,7 @@ class ReportGenerator:
             discos=discos,
             css=css,
             softwares=softwares,
+            data_geracao=datetime.now().strftime("%d/%m/%Y %H:%M:%S")
         )
 
         return html

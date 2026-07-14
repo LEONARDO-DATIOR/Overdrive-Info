@@ -26,6 +26,7 @@ body {
     border-radius: 14px;
     overflow: hidden;
     box-shadow: 0 8px 30px rgba(0,0,0,.12);
+    margin-bottom: 40px;
 }
 
 /* ==========================
@@ -104,6 +105,54 @@ body {
     color: #1e88e5;
     margin-bottom: 12px;
 }
+
+/* ==========================
+   Informações gerais
+========================== */
+
+.info-card-geral {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 20px;
+
+    p {
+        font-size: 16px;
+    }
+}
+
+.info-card-descricao {
+    padding: 20px;
+    background: #fff;
+    border: 1px solid #dbe5f1;
+    border-radius: 10px;
+
+    span {
+        font-weight: bold;
+        font-size: 22px;
+        padding-bottom: 2em;
+    }
+
+    p {
+        margin: 0;
+        padding: 0 8px;
+
+        font-size: 15px;
+        line-height: 32px;
+
+        background-image:
+            repeating-linear-gradient(
+                to bottom,
+                transparent 0,
+                transparent 31px,
+                #cfd8e3 31px,
+                #cfd8e3 32px
+            );
+
+        min-height: 320px;
+    }
+}
+
 
 /* ==========================
    SISTEMA OPERACIONAL

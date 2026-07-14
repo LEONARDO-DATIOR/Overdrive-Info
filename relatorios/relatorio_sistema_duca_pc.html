@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
-<head>
-    <meta charset="utf-8">
-    <title>Relatorio da maquina </title>
-    <style>
+    
+    <head>
+        <meta charset="utf-8">
+        <title>Relatorio da maquina duca_pc</title>
+        <style>
                 /* ==========================
    RESET
 ========================== */
@@ -33,6 +33,7 @@ body {
     border-radius: 14px;
     overflow: hidden;
     box-shadow: 0 8px 30px rgba(0,0,0,.12);
+    margin-bottom: 40px;
 }
 
 /* ==========================
@@ -111,6 +112,54 @@ body {
     color: #1e88e5;
     margin-bottom: 12px;
 }
+
+/* ==========================
+   Informações gerais
+========================== */
+
+.info-card-geral {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 20px;
+
+    p {
+        font-size: 16px;
+    }
+}
+
+.info-card-descricao {
+    padding: 20px;
+    background: #fff;
+    border: 1px solid #dbe5f1;
+    border-radius: 10px;
+
+    span {
+        font-weight: bold;
+        font-size: 22px;
+        padding-bottom: 2em;
+    }
+
+    p {
+        margin: 0;
+        padding: 0 8px;
+
+        font-size: 15px;
+        line-height: 32px;
+
+        background-image:
+            repeating-linear-gradient(
+                to bottom,
+                transparent 0,
+                transparent 31px,
+                #cfd8e3 31px,
+                #cfd8e3 32px
+            );
+
+        min-height: 320px;
+    }
+}
+
 
 /* ==========================
    SISTEMA OPERACIONAL
@@ -327,28 +376,37 @@ body {
 <body>
     <div class="page">
         <div class="header">
-            <h1>Relatorio do Sistema</h1>
+            <h1>Informações gerais</h1>
         </div>
 
         <div class="content">
-        
-            <div class="info-card info-card-so">
-                <div class="sub-title-card">
-                    <h2>Sistema Operacional</h2>
-                </div> 
-                
-                <div class="info-row"> 
-                    <p>Windows 11</p>
-                    <span class="label">Versao</span> 
-                    <span class="value">10.0.26200</span> 
-                </div>
+            <div class="info-card-geral">
+                <p><strong>Patrimonio:</strong> duca_pc</p>
+                <p><strong>Nome colaborador:</strong> ????????????</p>
+                <p><strong>Cargo:</strong> ????????????</p>
+                <p><strong>Analista responsável:</strong> ????????????</p>
+                <p><strong>Data análise:</strong> 14/07/2026 18:37:10</p>
             </div>
+            <div class="info-card-descricao">
+                <span>Descrição solicitação</span>
+                <p>
+                    Este é um exemplo de texto. Conforme o conteúdo aumenta, ele continua ocupando as próximas linhas, simulando uma folha de caderno ou uma área de anotações. Este é um exemplo de texto. Conforme o conteúdo aumenta, ele continua ocupando as próximas linhas, simulando uma folha de caderno ou uma área de anotações. Este é um exemplo de texto. Conforme o conteúdo aumenta, ele continua ocupando as próximas linhas, simulando uma folha de caderno ou uma área de anotações.
+                </p>
+            </div>
+        </div>
+    </div>
 
+    <div class="page">
+        <div class="header">
+            <h1>Relatorio de Hardware</h1>
+        </div>
+    
+        <div class="content">
             <div class="info-card info-card-processador">
                 <div class="sub-title-card">
                     <h2>Processador</h2>
                 </div> 
-
+    
                 <div class="info-row info-row-processador"> 
                     <span class="label">Processador</span> 
                     <p class="value">12th Gen Intel(R) Core(TM) i7-12700KF</p> 
@@ -367,7 +425,7 @@ body {
                 </div>
              
             </div>
-
+    
             <div class="info-card info-card-memoria">
                 <div class="sub-title-card sub-title-card-memoria">
                     <h2>Memoria RAM</h2>
@@ -393,10 +451,10 @@ body {
                     <span>Disco: C:\</span>
                     <ul>
                         <li>Espaço total: 930.10 GB</li>
-                        <li>Espaço utilizado: 907.12 GB</li>
-                        <li>Espaço livre: 22.98 GB</li>
+                        <li>Espaço utilizado: 913.35 GB</li>
+                        <li>Espaço livre: 16.75 GB</li>
                     </ul>
-                    <p>Porcentual de uso do disco: 97.53%</p>
+                    <p>Porcentual de uso do disco: 98.20%</p>
                 </div>
                 
                 <div class="info-row info-row-disco">
@@ -420,7 +478,29 @@ body {
                 </div>
                 
             </div>
+        </div>
+    </div>
+    
+    <div class="page">
+        <div class="header">
+            <h1>Relatorio do Sistema</h1>
+        </div>
 
+        <div class="content">
+        
+            <div class="info-card info-card-so">
+                <div class="sub-title-card">
+                    <h2>Sistema Operacional</h2>
+                </div> 
+                
+                <div class="info-row"> 
+                    <p>Windows 11</p>
+                    <span class="label">Versao</span> 
+                    <span class="value">10.0.26200</span> 
+                </div>
+            </div>
+
+           
             <div class="info-card info-card-software">
                 <div class="sub-title-card sub-title-card-software">
                     <h2>Softwares</h2>
@@ -513,7 +593,7 @@ body {
                     
                     <div class="info-row-software">
                         <span>Google Chrome</span>
-                        <p>Versão: 150.0.7871.102</p>
+                        <p>Versão: 150.0.7871.124</p>
                         <p>Fornecedor: Google LLC</p>
                     </div>
                     
@@ -657,7 +737,7 @@ body {
                     
                     <div class="info-row-software">
                         <span>Microsoft Visua</span>
-                        <p>Versão: 1.128.0</p>
+                        <p>Versão: 1.128.1</p>
                         <p>Fornecedor: Microsoft Corporation</p>
                     </div>
                     
@@ -667,6 +747,7 @@ body {
         
         </div>
     </div>
+
 </body>
 
 </html>
