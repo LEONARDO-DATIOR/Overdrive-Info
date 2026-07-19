@@ -2,3 +2,9 @@ py-cpuinfo
 psutil
 wmi
 playwright
+
+# UI
+customtkinter
+
+# LINGUAGEM
+python 3.14.5

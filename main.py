@@ -1,11 +1,8 @@
 from machine_monitor.menu.menu import InteractiveMenu
-
-
-def main() -> None:
-    menu = InteractiveMenu()
-    menu.run()
+from machine_monitor.gui.MainWindow import MainWindow
 
 
 if __name__ == "__main__":
-    main()
+    app = MainWindow()
+    app.mainloop()
 
