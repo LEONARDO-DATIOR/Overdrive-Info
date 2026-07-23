@@ -31,7 +31,7 @@ class ReportGenerator:
         self.memory_collector = memory_collector or MemoryCollector()
         self.softwares_collector = softwares_collector or SoftwaresCollectors()
 
-    def gerar(self) -> Path:
+    def gerar(self, nome_cliente, nome_analista) -> Path:
         sistema = self.system_collector.get_system_info()
         processador = self.processor_collector.collect()
         memorias = self.memory_collector.collect()
@@ -39,7 +39,7 @@ class ReportGenerator:
         softwares = self.softwares_collector.collect()
 
         caminho_salvo = self.carregar_caminho_relatorio_html()
-        html = self._carregar_html(sistema, processador, memorias, discos, softwares)
+        html = self._carregar_html(sistema, processador, memorias, discos, softwares, nome_cliente, nome_analista)
 
         self.output_dir.mkdir(parents=True, exist_ok=True)
         self.salvar_html(html, caminho_salvo)
@@ -55,7 +55,7 @@ class ReportGenerator:
         return self.output_dir / f"relatorio_sistema_{sistema.hostname}.html"
 
 
-    def _carregar_html(self, sistema, processador, memorias, discos, softwares) -> str:
+    def _carregar_html(self, sistema, processador, memorias, discos, softwares, nome_cliente, nome_analista) -> str:
         pasta_templates = Path(__file__).parent / "template"
         css = ( Path(__file__).parent / "styles" / "relatorioStyle.scss").read_text(encoding="utf-8")
 
@@ -73,7 +73,9 @@ class ReportGenerator:
             discos=discos,
             css=css,
             softwares=softwares,
-            data_geracao=datetime.now().strftime("%d/%m/%Y %H:%M:%S")
+            data_geracao=datetime.now().strftime("%d/%m/%Y %H:%M:%S"),
+            nome_cliente=nome_cliente,
+            nome_analista=nome_analista
         )
 
         return html
