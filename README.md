@@ -1,12 +1,13 @@
 # Monitor de Especificacoes da Maquina
 
-Projeto inicial em Python orientado a objetos para exibir informacoes basicas da maquina pelo terminal.
+Projeto desenvolvido para monitoramento e diagnóstico de equipamentos, com coleta e análise de informações de hardware e sistema. A solução permite identificar falhas, anomalias e possíveis gargalos de desempenho, além de gerar relatórios técnicos para auxiliar na análise e manutenção das máquinas.
 
 ## Opcoes do menu
 
 1. Exibir informacoes do hardware, como sistema, processador e RAM.
 2. Exibir espaco em disco.
-3. Sair.
+3. Gerar relatorio
+4. Sair.
 
 ## Como executar
 
