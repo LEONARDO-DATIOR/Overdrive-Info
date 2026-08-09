@@ -1,8 +1,8 @@
 import customtkinter as ctk
 
-from machine_monitor.gui.components.TelaOpcoes import TelaOpcoes
-from machine_monitor.gui.components.TelaInicial import TelaInicial
-from machine_monitor.gui.components.FormRelatorio import FormRelatorio
+from machine_monitor.gui.pages.TelaOpcoes import TelaOpcoes
+from machine_monitor.gui.pages.TelaInicial import TelaInicial
+from machine_monitor.gui.pages.FormRelatorio import FormRelatorio
 
 
 class MainWindow(ctk.CTk):

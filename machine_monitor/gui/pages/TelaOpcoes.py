@@ -1,10 +1,17 @@
 import customtkinter as customTK
 
+from machine_monitor.gui.pages.components.DiskInfo import DiskInfoView
+
 class TelaOpcoes(customTK.CTkFrame):
 
     def __init__(self, master, voltar):
         super().__init__(master)
         self.voltar = voltar
+        self.disk_info_view = None
+        def voltar_tela():
+            if self.disk_info_view:
+                self.disk_info_view.remover_frame()
+            self.voltar()
 
         # TITULO DA TELA
         titulo = customTK.CTkLabel(
@@ -32,7 +39,7 @@ class TelaOpcoes(customTK.CTkFrame):
             border_color="#35424D",
 
             # Ação do botão
-            command=voltar
+            command=voltar_tela
         )
         btn_voltar.pack(
             anchor="w",
@@ -44,7 +51,7 @@ class TelaOpcoes(customTK.CTkFrame):
         tipo_relatorio = customTK.CTkComboBox(
             self,
             values=[
-                "Relatório de Hardware",
+                "Relatório de disco",
                 "Relatório de Software",
                 "Relatório Completo"
             ],
@@ -57,6 +64,22 @@ class TelaOpcoes(customTK.CTkFrame):
         btn_gerar_relatorio = customTK.CTkButton(
             self,
             text="Gerar Relatório",
+            command=lambda: self.gerar_informacoes(tipo_relatorio)
         )
-
         btn_gerar_relatorio.pack(pady=20)
+
+        # TELA DE INFORMAÇÕES ESPECIFICAS
+    def gerar_informacoes(self, tipo_relatorio):
+        if self.disk_info_view:
+            self.disk_info_view.remover_frame()
+
+        match tipo_relatorio.get():
+            case "Relatório de disco":
+                self.disk_info_view = DiskInfoView(self)
+                self.disk_info_view.pack(fill="both", expand=True)
+            case "Relatório de Software":
+                print("Gerando relatório de Software...")
+            case "Relatório Completo":
+                print("Gerando relatório Completo...")
+            case _:
+                print("Tipo de relatório inválido.")

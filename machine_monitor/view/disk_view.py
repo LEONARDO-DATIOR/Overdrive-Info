@@ -15,5 +15,5 @@ class DiskView:
             print(f"Livre: {disco.livre_bytes // (1024**3)} GB")
         
         print(f"\n=== RESUMO TOTAL ===")
-        print(f"Espaço Total: {espaco_total // (1024**3)} GB")
+        print(f"Espaço Total: {espaco_total // (1024**3)} GB")  
         print(f"Quantidade de Discos: {len(discos)}")
