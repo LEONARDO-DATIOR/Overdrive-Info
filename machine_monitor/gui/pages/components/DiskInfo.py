@@ -1,6 +1,7 @@
 import customtkinter as customTK
 
 from machine_monitor.collectors.DiskCollector import DiskCollector
+from machine_monitor.gui.pages.components.texts.TituloPrincipal import TituloPrincipal
 
 class DiskInfoView(customTK.CTkFrame):
     def __init__(self, master):
@@ -8,12 +9,11 @@ class DiskInfoView(customTK.CTkFrame):
 
         print("Gerando relatório de SSD/HD...")
 
-        info_disco = customTK.CTkLabel(
-            self,
-            text="Informações de SSD/HD",
-            font=("Arial", 18, "bold")
+        self.info_disco = TituloPrincipal(
+            master=self,
+            text="Informações de Disco"
         )
-        info_disco.pack(pady=10)
+        self.info_disco.pack(pady=10)
 
         discos = DiskCollector().collect()
 
@@ -99,5 +99,7 @@ class DiskInfoView(customTK.CTkFrame):
     def remover_frame(self):
         print("Removendo frame de informações de disco...")
         print(self.frame_disco)
-        self.frame_disco.destroy()
+        if self.frame_disco is not None and self.info_disco is not None:
+            self.frame_disco.destroy()
+            self.info_disco.destroy()
     

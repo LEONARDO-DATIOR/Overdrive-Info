@@ -1,6 +1,8 @@
 import customtkinter as customTK
 
 from machine_monitor.gui.pages.components.DiskInfo import DiskInfoView
+from machine_monitor.gui.pages.components.buttons.BotaoPrincipal import BotaoPrincipal
+from machine_monitor.gui.pages.components.texts.TituloPrincipal import TituloPrincipal
 
 class TelaOpcoes(customTK.CTkFrame):
 
@@ -14,32 +16,19 @@ class TelaOpcoes(customTK.CTkFrame):
             self.voltar()
 
         # TITULO DA TELA
-        titulo = customTK.CTkLabel(
-            self,
-            text="Gerar Relatório",
-            font=("Arial", 24, "bold")
+        titulo = TituloPrincipal(
+            master=self,
+            text="Informações Específicas"
         )
         titulo.pack(pady=20)
 
         # BOTAO VOLTAR
-        btn_voltar = customTK.CTkButton(
-            self,
+        btn_voltar = BotaoPrincipal(
+            master=self,
             text="Voltar",
-
-            # Visual do botão
+            command=voltar_tela,
             width=50,
-            height=25,
-
-            fg_color="#253C50",
-            hover_color="#09213D",
-            text_color="white",
-
-            corner_radius=18,
-            border_width=2,
-            border_color="#35424D",
-
-            # Ação do botão
-            command=voltar_tela
+            height=30,
         )
         btn_voltar.pack(
             anchor="w",
@@ -61,10 +50,10 @@ class TelaOpcoes(customTK.CTkFrame):
         tipo_relatorio.pack(pady=10)
 
         # BOTAO GERAR RELATÓRIO
-        btn_gerar_relatorio = customTK.CTkButton(
-            self,
+        btn_gerar_relatorio = BotaoPrincipal(
+            master=self,
             text="Gerar Relatório",
-            command=lambda: self.gerar_informacoes(tipo_relatorio)
+            command=lambda: self.gerar_informacoes(tipo_relatorio),
         )
         btn_gerar_relatorio.pack(pady=20)
 

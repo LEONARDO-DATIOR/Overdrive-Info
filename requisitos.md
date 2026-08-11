@@ -46,6 +46,7 @@ Este documento define as especificações e requisitos para o desenvolvimento do
 | **Psutil** | Responsável pela coleta de informações relacionadas ao uso de recursos do sistema, como memória, discos e processador. |
 | **WMI** | Biblioteca utilizada para acessar informações avançadas do Windows através do Windows Management Instrumentation, permitindo obter detalhes de hardware e software do equipamento. |
 | **Winreg** | Biblioteca nativa do Python utilizada para acessar o Registro do Windows e coletar informações de softwares instalados no sistema. |
+| **pyinstaller** | Utilizado para gerar o .exe da aplicação.
 
 ### Estrutura do sistema
 
